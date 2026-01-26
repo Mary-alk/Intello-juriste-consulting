@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Scale } from "lucide-react";
 
 const Navbar = () => {
   const location = useLocation();
@@ -21,14 +20,15 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-3 group">
           <motion.div
-            whileHover={{ rotate: 15 }}
+            whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <Scale className="w-8 h-8 text-primary" />
+            <img 
+              src="/logo.png" 
+              alt="Logo Intello Juriste" 
+              className="h-10 w-auto"
+            />
           </motion.div>
-          <span className="font-bold text-xl text-foreground">
-            Intello Juriste
-          </span>
         </Link>
 
         <div className="flex gap-2">
