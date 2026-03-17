@@ -44,3 +44,20 @@ button {
   cursor: pointer;
   font-family: inherit;
 }
+
+/* Shared button */
+.btn-primary {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  border: none;
+  font-size: 0.875rem;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
