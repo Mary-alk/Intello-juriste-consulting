@@ -7,8 +7,9 @@ const Navbar = () => {
 
   const navItems = [
     { path: "/", label: "Accueil" },
-    { path: "/ebooks", label: "E-books" },
-    { path: "/rendez-vous", label: "Prendre rendez-vous" },
+    { path: "/bibliotheque", label: "Bibliothèque" },
+    { path: "/rendez-vous", label: "Rendez-vous" },
+    { path: "/mes-ebooks", label: "Mes E-books" },
   ];
 
   return (
@@ -24,10 +25,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <img
-              src="/logo.png"
-              alt="Logo Intello Juriste"
-            />
+            <img src="/logo.png" alt="Logo Intello Juriste" />
           </motion.div>
         </Link>
 
@@ -47,6 +45,15 @@ const Navbar = () => {
               </Link>
             </motion.div>
           ))}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.4 }}
+          >
+            <Link to="/login" className="nav-link-auth">
+              Connexion
+            </Link>
+          </motion.div>
         </div>
       </div>
     </motion.nav>
