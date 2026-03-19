@@ -38,7 +38,7 @@
 
 .ebook-cover {
   height: 12rem;
-  background: linear-gradient(135deg, var(--primary-light), var(--primary-lighter));
+  background: linear-gradient(135deg, var(--primary-light), var(--accent-light));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,7 +47,7 @@
 .ebook-cover svg {
   width: 4rem;
   height: 4rem;
-  color: rgba(26, 91, 196, 0.6);
+  color: rgba(107, 58, 42, 0.5);
   transition: color 0.3s;
 }
 

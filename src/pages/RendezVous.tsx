@@ -1,31 +1,25 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Calendar, Send, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import Layout from "@/components/Layout";
-import { useToast } from "@/hooks/use-toast";
 import "../styles/rendezvous.css";
 
 const RendezVous = () => {
-  const { toast } = useToast();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    nom: "",
-    prenom: "",
-    telephone: "",
-    email: "",
     motif: "",
+    date: "",
+    heure: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Demande envoyée !",
-      description: "Nous vous recontacterons dans les plus brefs délais.",
-    });
-    setFormData({ nom: "", prenom: "", telephone: "", email: "", motif: "" });
+    navigate("/confirmation", { state: formData });
   };
 
   const handleReset = () => {
-    setFormData({ nom: "", prenom: "", telephone: "", email: "", motif: "" });
+    setFormData({ motif: "", date: "", heure: "" });
   };
 
   return (
@@ -47,7 +41,7 @@ const RendezVous = () => {
               <Calendar />
             </motion.div>
             <h1>Prendre rendez-vous</h1>
-            <p>Remplissez le formulaire ci-dessous et nous vous recontacterons.</p>
+            <p>Choisissez un créneau et décrivez le motif de votre consultation.</p>
           </motion.div>
 
           <motion.form
@@ -58,33 +52,23 @@ const RendezVous = () => {
             className="rdv-form"
           >
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }} className="form-group">
-              <label htmlFor="nom">Nom *</label>
-              <input id="nom" value={formData.nom} onChange={(e) => setFormData({ ...formData, nom: e.target.value })} required />
+              <label htmlFor="date">Date du rendez-vous *</label>
+              <input id="date" type="date" value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })} required />
             </motion.div>
 
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.35 }} className="form-group">
-              <label htmlFor="prenom">Prénom *</label>
-              <input id="prenom" value={formData.prenom} onChange={(e) => setFormData({ ...formData, prenom: e.target.value })} required />
+              <label htmlFor="heure">Heure *</label>
+              <input id="heure" type="time" value={formData.heure} onChange={(e) => setFormData({ ...formData, heure: e.target.value })} required />
             </motion.div>
 
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }} className="form-group">
-              <label htmlFor="telephone">Numéro de téléphone *</label>
-              <input id="telephone" type="tel" value={formData.telephone} onChange={(e) => setFormData({ ...formData, telephone: e.target.value })} required />
+              <label htmlFor="motif">Motif du rendez-vous *</label>
+              <textarea id="motif" value={formData.motif} onChange={(e) => setFormData({ ...formData, motif: e.target.value })} placeholder="Décrivez brièvement le motif de votre consultation..." required />
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.45 }} className="form-group">
-              <label htmlFor="email">Email (facultatif)</label>
-              <input id="email" type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
-            </motion.div>
-
-            <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }} className="form-group">
-              <label htmlFor="motif">Motif du rendez-vous (facultatif)</label>
-              <textarea id="motif" value={formData.motif} onChange={(e) => setFormData({ ...formData, motif: e.target.value })} />
-            </motion.div>
-
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55 }} className="form-actions">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45 }} className="form-actions">
               <button type="submit" className="btn-submit">
-                <Send /> Envoyer
+                <Send /> Confirmer
               </button>
               <button type="button" className="btn-cancel" onClick={handleReset}>
                 <X /> Annuler

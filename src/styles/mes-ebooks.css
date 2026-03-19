@@ -1,0 +1,61 @@
+.mes-ebooks-section {
+  padding: 4rem 1.5rem;
+}
+
+.mes-ebooks-container {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.mes-ebooks-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.mes-ebooks-header h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.mes-ebooks-header p {
+  color: var(--muted);
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+.mes-ebooks-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.mes-ebooks-empty-icon {
+  width: 5rem;
+  height: 5rem;
+  background: var(--primary-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.mes-ebooks-empty-icon svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--primary);
+}
+
+.mes-ebooks-empty h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.mes-ebooks-empty p {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}

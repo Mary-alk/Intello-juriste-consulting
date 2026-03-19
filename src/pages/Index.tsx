@@ -54,7 +54,7 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.15 * index, duration: 0.5 }}
-              whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
+              whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(107,58,42,0.1)" }}
               className="service-card"
             >
               <motion.div whileHover={{ rotate: 10 }} className="service-icon">
@@ -108,7 +108,7 @@ const Index = () => {
             <BookOpen />
             <h3>Enrichissez-vous sur les notions de droits</h3>
             <p>Découvrez nos E-books pour mieux comprendre vos droits.</p>
-            <Link to="/ebooks" className="btn-primary">Voir nos E-books</Link>
+            <Link to="/bibliotheque" className="btn-primary">Voir la bibliothèque</Link>
           </motion.div>
 
           <motion.div

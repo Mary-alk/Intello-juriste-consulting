@@ -3,7 +3,7 @@ import { BookOpen } from "lucide-react";
 import Layout from "@/components/Layout";
 import "../styles/ebooks.css";
 
-const Ebooks = () => {
+const Bibliotheque = () => {
   const ebooks = [
     {
       title: "Choisir son régime matrimonial : ce qu'il faut savoir avant de se marier",
@@ -32,8 +32,8 @@ const Ebooks = () => {
             transition={{ duration: 0.6 }}
             className="ebooks-header"
           >
-            <h1>Nos E-books</h1>
-            <p>Découvrez notre collection de guides juridiques pour vous accompagner dans vos démarches.</p>
+            <h1>Bibliothèque</h1>
+            <p>Découvrez notre catalogue de guides juridiques pour vous accompagner dans vos démarches.</p>
           </motion.div>
 
           <div className="ebooks-grid">
@@ -75,4 +75,4 @@ const Ebooks = () => {
   );
 };
 
-export default Ebooks;
+export default Bibliotheque;
