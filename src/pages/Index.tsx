@@ -13,7 +13,7 @@ const Index = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
+      {/* Welcome Section */}
       <section className="hero">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -25,23 +25,52 @@ const Index = () => {
         </motion.div>
 
         <div className="hero-content">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="welcome-tag"
+          >
+            — Cabinet de conseil juridique —
+          </motion.p>
+
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Nos services
+            Bienvenue chez <span className="text-primary">Intello Juriste Consulting</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
-            Notre cabinet vous accompagne avec rigueur et professionnalisme dans toutes vos démarches juridiques.
-            Nous sommes spécialisés en droit foncier, en gestion de patrimoine et en droit des affaires.
+            Votre partenaire de confiance pour des solutions juridiques sur mesure.
+            Nous mettons notre expertise au service de vos ambitions, avec rigueur, transparence et engagement.
           </motion.p>
         </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="services-heading">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Nos services
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          Notre cabinet vous accompagne avec professionnalisme dans toutes vos démarches juridiques.
+        </motion.p>
       </section>
 
       {/* Services Cards */}

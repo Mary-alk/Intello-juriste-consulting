@@ -28,16 +28,46 @@
   z-index: 1;
 }
 
+.welcome-tag {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
 .hero-content h1 {
   font-size: 2.25rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
 }
 
+.hero-content h1 .text-primary {
+  color: var(--primary);
+}
+
 .hero-content p {
   font-size: 1.125rem;
   color: var(--muted);
   line-height: 1.8;
+}
+
+/* Services Heading */
+.services-heading {
+  text-align: center;
+  padding: 3rem 1.5rem 0;
+}
+
+.services-heading h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.services-heading p {
+  color: var(--muted);
+  font-size: 1.05rem;
 }
 
 /* Services */
