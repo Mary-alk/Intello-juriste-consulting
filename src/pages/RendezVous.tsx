@@ -12,14 +12,65 @@ const RendezVous = () => {
     date: "",
     heure: "",
   });
+  const [dateError, setDateError] = useState("");
+  const [heureError, setHeureError] = useState("");
+
+  const getMinDate = () => {
+    const today = new Date();
+    return today.toISOString().split("T")[0];
+  };
+
+  const validateDateTime = (date: string, heure: string) => {
+    if (!date) return true;
+    const dayOfWeek = new Date(date + "T00:00:00").getDay(); // 0=Sun, 6=Sat
+
+    if (dayOfWeek === 0) {
+      setDateError("Le cabinet est fermé le dimanche.");
+      return false;
+    }
+    setDateError("");
+
+    if (!heure) return true;
+    const [h, m] = heure.split(":").map(Number);
+    const minutes = h * 60 + m;
+
+    if (dayOfWeek === 6) {
+      // Samedi : 8h-12h30
+      if (minutes < 480 || minutes > 750) {
+        setHeureError("Samedi : créneaux disponibles de 8h à 12h30.");
+        return false;
+      }
+    } else {
+      // Lundi-Vendredi : 8h-12h et 14h-17h
+      if (minutes < 480 || minutes > 1020 || (minutes >= 720 && minutes < 840)) {
+        setHeureError("Lun-Ven : créneaux de 8h à 12h et 14h à 17h.");
+        return false;
+      }
+    }
+    setHeureError("");
+    return true;
+  };
+
+  const handleDateChange = (date: string) => {
+    setFormData({ ...formData, date });
+    validateDateTime(date, formData.heure);
+  };
+
+  const handleHeureChange = (heure: string) => {
+    setFormData({ ...formData, heure });
+    validateDateTime(formData.date, heure);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validateDateTime(formData.date, formData.heure)) return;
     navigate("/confirmation", { state: formData });
   };
 
   const handleReset = () => {
     setFormData({ motif: "", date: "", heure: "" });
+    setDateError("");
+    setHeureError("");
   };
 
   return (
