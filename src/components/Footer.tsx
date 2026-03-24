@@ -7,7 +7,7 @@ const Footer = () => {
     { icon: Phone, text: "+228 96 33 57 71", href: "https://wa.me/22896335771" },
     { icon: Mail, text: "intellojuriste@gmail.com", href: "mailto:intellojuriste@gmail.com" },
     { icon: MapPin, text: "Agoè Daliko", href: "https://www.google.com/maps/search/Agoè+Daliko+Lomé+Togo" },
-    { icon: Linkedin, text: "LinkedIn", href: "https://linkedin.com" },
+    { icon: Linkedin, text: "LinkedIn", href: "https://www.linkedin.com/in/abdoul-aziz-alaka-b045b91b6/" },
   ];
 
   return (
