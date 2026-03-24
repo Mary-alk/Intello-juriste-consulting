@@ -4,21 +4,29 @@ import Layout from "@/components/Layout";
 import "../styles/ebooks.css";
 
 const Bibliotheque = () => {
+  // ═══════════════════════════════════════════════════════
+  // 📚 CATALOGUE DES EBOOKS — Modifier ici les titres, descriptions, prix et images
+  // Pour ajouter un ebook : copier un bloc et remplir les champs
+  // Pour l'image : mettre le fichier dans /public/ et renseigner le chemin dans "cover"
+  // ═══════════════════════════════════════════════════════
   const ebooks = [
     {
       title: "Choisir son régime matrimonial : ce qu'il faut savoir avant de se marier",
       description: "Comprendre vos droits et obligations en tant que salarié.",
       price: "5 000 FCFA",
+      cover: "", // ex: "/covers/ebook1.jpg"
     },
     {
       title: "Le mariage civil : droits, obligations et avantages à connaître",
       description: "Mariage, divorce, succession : l'essentiel à connaître.",
       price: "4 000 FCFA",
+      cover: "",
     },
     {
       title: "Acheter un terrain en toute sécurité : les démarches essentielles",
       description: "Guide juridique pour entrepreneurs et PME.",
       price: "6 000 FCFA",
+      cover: "",
     },
   ];
 
@@ -48,7 +56,11 @@ const Bibliotheque = () => {
                 className="ebook-card"
               >
                 <motion.div whileHover={{ scale: 1.05 }} className="ebook-cover">
-                  <BookOpen />
+                  {ebook.cover ? (
+                    <img src={ebook.cover} alt={ebook.title} style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "0.5rem" }} />
+                  ) : (
+                    <BookOpen />
+                  )}
                 </motion.div>
 
                 <div className="ebook-body">

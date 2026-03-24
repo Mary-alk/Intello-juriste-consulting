@@ -4,9 +4,9 @@ import "../styles/footer.css";
 
 const Footer = () => {
   const contactItems = [
-    { icon: Phone, text: "+228 96 33 57 71", href: "tel:+22896335771" },
+    { icon: Phone, text: "+228 96 33 57 71", href: "https://wa.me/22896335771" },
     { icon: Mail, text: "intellojuriste@gmail.com", href: "mailto:intellojuriste@gmail.com" },
-    { icon: MapPin, text: "Agoè Daliko", href: "#" },
+    { icon: MapPin, text: "Agoè Daliko", href: "https://www.google.com/maps/search/Agoè+Daliko+Lomé+Togo" },
     { icon: Linkedin, text: "LinkedIn", href: "https://linkedin.com" },
   ];
 
@@ -46,7 +46,7 @@ const Footer = () => {
           transition={{ delay: 0.5 }}
           className="footer-divider"
         >
-          <p>© 2025 Intello Juriste Consulting. Tous droits réservés.</p>
+          <p>© 2026 Intello Juriste Consulting. Tous droits réservés.</p>
         </motion.div>
       </div>
     </motion.footer>

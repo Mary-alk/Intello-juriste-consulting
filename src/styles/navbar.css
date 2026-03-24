@@ -2,9 +2,9 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(250, 248, 246, 0.95);
+  background: linear-gradient(135deg, rgba(107, 58, 42, 0.08) 0%, rgba(250, 248, 246, 0.97) 50%, rgba(107, 58, 42, 0.05) 100%);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid rgba(107, 58, 42, 0.15);
 }
 
 .navbar-inner {
