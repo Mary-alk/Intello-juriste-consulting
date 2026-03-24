@@ -104,12 +104,14 @@ const RendezVous = () => {
           >
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }} className="form-group">
               <label htmlFor="date">Date du rendez-vous *</label>
-              <input id="date" type="date" value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })} required />
+              <input id="date" type="date" min={getMinDate()} value={formData.date} onChange={(e) => handleDateChange(e.target.value)} required />
+              {dateError && <span className="form-error">{dateError}</span>}
             </motion.div>
 
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.35 }} className="form-group">
               <label htmlFor="heure">Heure *</label>
-              <input id="heure" type="time" value={formData.heure} onChange={(e) => setFormData({ ...formData, heure: e.target.value })} required />
+              <input id="heure" type="time" value={formData.heure} onChange={(e) => handleHeureChange(e.target.value)} required />
+              {heureError && <span className="form-error">{heureError}</span>}
             </motion.div>
 
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }} className="form-group">

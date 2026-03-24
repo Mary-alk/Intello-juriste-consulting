@@ -46,7 +46,7 @@ const Footer = () => {
           transition={{ delay: 0.5 }}
           className="footer-divider"
         >
-          <p>© 2025 Intello Juriste Consulting. Tous droits réservés.</p>
+          <p>© 2026 Intello Juriste Consulting. Tous droits réservés.</p>
         </motion.div>
       </div>
     </motion.footer>
