@@ -82,6 +82,14 @@
   resize: vertical;
 }
 
+.form-error {
+  display: block;
+  color: #c0392b;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
 .form-actions {
   display: flex;
   gap: 1rem;

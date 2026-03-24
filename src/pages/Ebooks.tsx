@@ -56,7 +56,11 @@ const Bibliotheque = () => {
                 className="ebook-card"
               >
                 <motion.div whileHover={{ scale: 1.05 }} className="ebook-cover">
-                  <BookOpen />
+                  {ebook.cover ? (
+                    <img src={ebook.cover} alt={ebook.title} style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "0.5rem" }} />
+                  ) : (
+                    <BookOpen />
+                  )}
                 </motion.div>
 
                 <div className="ebook-body">
