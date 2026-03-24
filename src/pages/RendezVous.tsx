@@ -91,7 +91,7 @@ const RendezVous = () => {
             >
               <Calendar />
             </motion.div>
-            <h1>Prendre rendez-vous</h1>
+            <h1>Prendre rendez-vous avec Maître ALAKA</h1>
             <p>Choisissez un créneau et décrivez le motif de votre consultation.</p>
           </motion.div>
 
